@@ -24,11 +24,11 @@ jobs:
       - name: Build
         run: ./gradlew build
       - name: Show generated artifacts
-        run: find ./build/libs
+        run: find ./build
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
           prerelease: false
           title: ${{ github.event.repository.name }} v${{ github.run_number }}
-          files: "build/libs/*.jar"
+          files: "build/*.jar"
