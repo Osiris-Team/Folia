@@ -23,10 +23,6 @@ jobs:
         run: ./gradlew applyPatches
       - name: Build
         run: ./gradlew build
-      - name: Show generated artifacts
-        run: |
-          find ./Folia-Server/build/libs
-          find ./Folia-API/build/libs/libs
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
